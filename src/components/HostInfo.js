@@ -15,6 +15,12 @@ class HostInfo extends Component {
     // IMPORTANT: But whether it should be stateful or not is entirely up to you. Change this component however you like.
   }
 
+  // componentDidUpdate() {
+  //   this.setState({
+  //     options: [{key: "some_area" text: "Some Area" value: "some_area"}, {key: "another_area" text: "Another Area" value: "another_area"}]
+  //   })
+  // }
+
   createName = () => {
     let name = this.props.selectedHost.firstName
     if (this.props.selectedHost.lastName !== "n/a") name += ` ${this.props.selectedHost.lastName}`
