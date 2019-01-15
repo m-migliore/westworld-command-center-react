@@ -15,13 +15,15 @@ class HostInfo extends Component {
     })
   }
 
- //  static getDerivedStateFromProps(nextProps, prevState) {
- //    if (prevState.value !== nextProps.selectedHost.area) {
- //      return {
- //        value: nextProps.selectedHost.area
- //      };
- //    }
- // }
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   if (prevState.value !== nextProps.selectedHost.area) {
+  //     return {
+  //       value: nextProps.selectedHost.area
+  //     };
+  //   }
+  // }
+
+
 
 
   state = {
@@ -39,6 +41,13 @@ class HostInfo extends Component {
     // IMPORTANT: But whether it should be stateful or not is entirely up to you. Change this component however you like.
   }
 
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   if (prevState.value !== nextProps.selectedHost.area) {
+  //     return {
+  //       value: nextProps.selectedHost.area
+  //     };
+  //   }
+  // }
 
 
   createName = () => {
