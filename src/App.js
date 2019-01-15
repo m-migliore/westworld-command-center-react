@@ -44,7 +44,10 @@ class App extends Component {
   render(){
     return (
       <Segment id='app'>
-        <WestworldMap areas={this.state.areas}/>
+        <WestworldMap
+          areas={this.state.areas}
+          hosts={this.state.hosts}
+        />
         <Headquarters
           hosts={this.state.hosts}
           selectHost={this.selectHost}

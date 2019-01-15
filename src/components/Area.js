@@ -1,12 +1,13 @@
 import React from 'react';
 import '../stylesheets/Area.css'
+import HostList from "./HostList"
 
 const Area = (props) => (
 
   <div className='area' id={props.area.name}>
     <h3 className='labels'>{props.area.name.replace(/(^|_)./g, s => s.slice(-1).toUpperCase())}</h3>
 
-    {/* See Checkpoint 1 item 2 in the Readme for a clue as to what goes here */}
+    <HostList hosts={props.hosts}/>
 
   </div>
 
