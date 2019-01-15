@@ -19,8 +19,12 @@ class App extends Component {
     fetch("http://localhost:4000/hosts")
     .then(r => r.json())
     .then(data => {
+      const updatedHosts = data.map(host => {
+        return {...host, selected: false}
+      })
+
       this.setState({
-        hosts: data
+        hosts: updatedHosts
       })
     })
 
@@ -35,8 +39,21 @@ class App extends Component {
 
   selectHost = (selectedHost) => {
     console.log(selectedHost)
-    const foundHost = this.state.hosts.find(host => host.id === selectedHost.id)
+    //const foundHost = this.state.hosts.find(host => host.id === selectedHost.id)
+    let foundHost
+    const updatedHosts = this.state.hosts.map(host => {
+      if (host.id === selectedHost.id) {
+        host.selected = true
+        foundHost = host
+        return host
+      } else {
+        host.selected = false
+        return host
+      }
+    })
+
     this.setState({
+      hosts: updatedHosts,
       selectedHost: foundHost
     })
   }

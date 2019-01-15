@@ -22,14 +22,8 @@ class HostInfo extends Component {
   }
 
   handleChange = (e, {value}) => {
-    console.log(value)
-    // this.setState({ value }, this.changeLocationCallback)
     this.props.changeLocation(value)
   }
-
-  // changeLocationCallback = () => {
-  //   this.props.changeLocation(this.state.value)
-  // }
 
   toggle = () => {
     console.log("The radio button fired")
