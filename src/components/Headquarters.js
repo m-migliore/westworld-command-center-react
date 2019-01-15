@@ -20,7 +20,12 @@ class Headquarters extends Component {
           />
         </Grid.Column>
         <Grid.Column width={5}>
-          <Details selectedHost={this.props.selectedHost}/>
+          <Details
+            selectedHost={this.props.selectedHost}
+            areas={this.props.areas}
+            changeLocation={this.props.changeLocation}
+            changeActive={this.props.changeActive}
+          />
         </Grid.Column>
         <Grid.Column width={3}>
 

@@ -7,7 +7,10 @@ const Area = (props) => (
   <div className='area' id={props.area.name}>
     <h3 className='labels'>{props.area.name.replace(/(^|_)./g, s => s.slice(-1).toUpperCase())}</h3>
 
-    <HostList hosts={props.hosts}/>
+    <HostList
+      hosts={props.hosts}
+      selectHost={props.selectHost}
+    />
 
   </div>
 

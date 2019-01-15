@@ -41,17 +41,77 @@ class App extends Component {
     })
   }
 
+  changeLocation = (selectedHost, location) => {
+
+    let updatedFoundHost
+    const updatedHosts = this.state.hosts.map(host => {
+      if (host.id === selectedHost.id) {
+        host.area = location
+        updatedFoundHost = host
+        return host
+      } else {
+        return host
+      }
+    })
+
+    this.setState({
+      hosts: updatedHosts,
+      selectedHost: updatedFoundHost
+    })
+  }
+
+  changeLocation = (location) => {
+    let updatedFoundHost
+    const updatedHosts = this.state.hosts.map(host => {
+      if (host.id === this.state.selectedHost.id) {
+        host.area = location
+        updatedFoundHost = host
+        return host
+      } else {
+        return host
+      }
+    })
+
+    this.setState({
+      hosts: updatedHosts,
+      selectedHost: updatedFoundHost
+    })
+  }
+
+  changeActive = () => {
+    console.log("changeActive")
+    let updatedFoundHost
+    const updatedHosts = this.state.hosts.map(host => {
+      if (host.id === this.state.selectedHost.id) {
+        host.active = !host.active
+        updatedFoundHost = host
+        return host
+      } else {
+        return host
+      }
+    })
+
+    this.setState({
+      hosts: updatedHosts,
+      selectedHost: updatedFoundHost
+    })
+  }
+
   render(){
     return (
       <Segment id='app'>
         <WestworldMap
           areas={this.state.areas}
           hosts={this.state.hosts}
+          selectHost={this.selectHost}
         />
         <Headquarters
+          areas={this.state.areas}
           hosts={this.state.hosts}
           selectHost={this.selectHost}
           selectedHost={this.state.selectedHost}
+          changeLocation={this.changeLocation}
+          changeActive={this.changeActive}
         />
       </Segment>
     )

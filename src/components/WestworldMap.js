@@ -11,7 +11,9 @@ const WestworldMap = (props) => {
         return <Area
                 key={area.id}
                 area={area}
-                hosts={props.hosts.filter(host => host.area === area.name)}
+                hosts={props.hosts.filter(host => host.area === area.name && host.active)}
+                selectHost={props.selectHost}
+                changeLocation={props.changeLocation}
                />
       })}
     </Segment>
