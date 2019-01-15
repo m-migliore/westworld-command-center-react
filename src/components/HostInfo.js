@@ -15,13 +15,14 @@ class HostInfo extends Component {
     })
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-   if (prevState.value !== nextProps.selectedHost.area) {
-     return {
-       value: nextProps.selectedHost.area
-     };
-   }
- }
+ //  static getDerivedStateFromProps(nextProps, prevState) {
+ //    if (prevState.value !== nextProps.selectedHost.area) {
+ //      return {
+ //        value: nextProps.selectedHost.area
+ //      };
+ //    }
+ // }
+
 
   state = {
     // options: [{key: "some_area" text: "Some Area" value: "some_area"}, {key: "another_area" text: "Another Area" value: "another_area"}],
